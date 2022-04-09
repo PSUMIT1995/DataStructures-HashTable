@@ -12,20 +12,20 @@ namespace Hash_Table
         //passing the key value pair to the linked list
         private readonly LinkedList<KeyValue<K, V>>[] iteams;
 
-        /// constructor to initialize  
+        /// constructor to initialize
         public MyMapNode(int size)
         {
             this.size = size;
             this.iteams = new LinkedList<KeyValue<K, V>>[size];
         }
-  
+    
         /// method to fing the postion of the hash(creating hash code)
         protected int getArrayPosition(K key)
         {
             int position = key.GetHashCode() % size;
             return Math.Abs(position);
         }
-        
+     
         /// method to get a value stored in particular key
         public V Get(K key)
         {
